@@ -24,6 +24,7 @@ public class User {
 	private String email;
 	private String password;
 	private LocalDate birthday;
+	private String imageProfile;
 
 	@OneToMany(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Setup> setups;
@@ -80,5 +81,19 @@ public class User {
 
 	public List<Setup> getSetups() {
 		return setups;
+	}
+
+	public String getImageProfile() {
+		return imageProfile;
+	}
+
+	public void setImageProfile(String imageProfile) {
+		this.imageProfile = imageProfile;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", birthday="
+				+ birthday + ", imageProfile=" + imageProfile + "]";
 	}
 }
