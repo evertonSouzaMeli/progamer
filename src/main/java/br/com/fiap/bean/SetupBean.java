@@ -68,6 +68,17 @@ public class SetupBean {
 		return new SetupDao().listAll();
 	}
 	
+	public List<Setup> listByUser() {
+		User user = (User) FacesContext
+				.getCurrentInstance()
+				.getExternalContext()
+				.getSessionMap()
+				.get("user");
+		
+		
+		return user.getSetups();
+	}
+	
 	public String remove(Setup setup) {
 		new SetupDao().delete(setup);
 		

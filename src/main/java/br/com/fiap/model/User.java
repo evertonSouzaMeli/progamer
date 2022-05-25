@@ -78,4 +78,7 @@ public class User {
 		this.name = name;
 	}
 
+	public List<Setup> getSetups() {
+		return setups;
+	}
 }
